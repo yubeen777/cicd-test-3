@@ -54,7 +54,7 @@ deploy-job:
 #          docker login -u ${{secrets.DOCKER_USER}} -- password
           # 기존에 실행되돈 컨테이너 중지 && 삭제
           docker stop myweb || true
-          docker rm || true
+          docker rm myweb || true
           # 변경된 이미지 pull
           docker pull ${{secrets.DOCKER_USER}}/web-app:latest        
           # 새로운 컨테이너를 실행
